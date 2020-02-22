@@ -1,0 +1,1 @@
+web: gunicorn partnerfinder.wsgi
