@@ -1,1 +1,1 @@
-web: gunicorn partnerfinder.wsgi
+web: gunicorn mysite.wsgi
