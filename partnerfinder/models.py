@@ -10,6 +10,9 @@ class Student(models.Model):
 	first_name = models.CharField(max_length=100)
 	last_name = models.CharField(max_length=100)
 
+class Course(models.Model):
+	name = models.CharField(max_length=100)
+
 class TimeSlot(models.Model):
 	start_time = models.DateTimeField()
 	end_time = models.DateTimeField()
@@ -28,9 +31,6 @@ class Instruction(models.Model):
 
 class PreviousCourse(models.Model):
 	student = models.ForeignKey(Student, on_delete=models.CASCADE)
-	name = models.CharField(max_length=100)
-
-class Course(models.Model):
 	name = models.CharField(max_length=100)
 
 class Assignment(models.Model):
