@@ -8,7 +8,7 @@ def index(request):
     return render(request, 'index.html')
 
 def courses(request):
-	courses_list = Course.objects.order_by('name')
+	course_list = Course.objects.order_by('name')
 	context = {'course_list': course_list}
 	return render(request, 'courses.html', context)
 
