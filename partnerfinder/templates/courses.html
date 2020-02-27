@@ -10,7 +10,7 @@
     {% if course_list %}
       <ul>
       {% for course in course_list %}
-        <li>{{course.name}}: <a href="{% url 'courses' course.id %}"> View details </a></li>
+        <li>{{course.name}}: <a href="{% url 'courseinfo' course.id %}"> View details </a></li>
       {% endfor %}
       </ul>
     {% else %}
