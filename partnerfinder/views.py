@@ -7,11 +7,13 @@ from .models import *
 def index(request):
     return render(request, 'index.html')
 
-def classes(request):
-	return render(request, 'classes.html')
+def courses(request):
+	courses_list = Course.objects.order_by('name')
+	context = {'course_list': course_list}
+	return render(request, 'courses.html', context)
 
-def classinfo(request, class_id):
-	return render(request, 'classinfo.html')
+def courseinfo(request, course_id):
+	return render(request, 'courseinfo.html')
 
 def assignmentinfo(request, assignment_id):
 	return render(request, 'assignmentinfo.html')
@@ -19,10 +21,10 @@ def assignmentinfo(request, assignment_id):
 def postinginfo(request, posting_id):
 	return render(request, 'postinginfo.html')
 
-def createclass(request):
-	return render(request, 'classinfo.html')
+def createcourse(request):
+	return render(request, 'courseinfo.html')
 
-def createassignment(request, class_id):
+def createassignment(request, course_id):
 	return render(request, 'assignmentinfo.html')
 
 def createposting(request, assignment_id):

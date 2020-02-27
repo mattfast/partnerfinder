@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     Your Enrolled Courses
+  </head>	
+  <body>
+    <h1>Your Current Courses:</h1>
+
+
+    {% if course_list %}
+      <ul>
+      {% for course in course_list %}
+        <li>{{course.name}}: <a href="{% url 'courses' course.id %}"> View details </a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p> You are not currently enrolled in any courses. </p>
+  </body>	
+</html>
