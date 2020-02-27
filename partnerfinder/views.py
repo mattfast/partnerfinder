@@ -16,6 +16,9 @@ def classinfo(request, class_id):
 def assignmentinfo(request, assignment_id):
 	return render(request, 'assignmentinfo.html')
 
+def postinginfo(request, posting_id):
+	return render(request, 'postinginfo.html')
+
 def createclass(request):
 	return render(request, 'classinfo.html')
 
