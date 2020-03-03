@@ -3,13 +3,11 @@
   <head>
   </head>	
   <body>
-    <h1>Postings for {{assignment_name}}:</h1>
+    <h1>Postings for {{assignment.name}}:</h1>
 
     {% for posting in posting_list %}
-      <p>{{assignment.name}}: </p>
+      <p>Posting: {{posting.note}}</p>
     {% endfor %}
     <a href="{% url 'postingform' assignment.id %}"> Create a posting for this assignment. </a>
-    <p> No postings have been created for this assignment. </p>
-    <p> <a href="{% url 'postingform' assignment.id %}"> Create the first one! </a> </p>
   </body>	
 </html>
