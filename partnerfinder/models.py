@@ -40,8 +40,9 @@ class Assignment(models.Model):
 class Posting(models.Model):
 	student = models.ForeignKey(Student, on_delete=models.CASCADE)
 	assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
+	created = models.DateTimeField()
 	wants_automatic = models.BooleanField()
-	node = models.TextField()
+	note = models.TextField()
 
 
 

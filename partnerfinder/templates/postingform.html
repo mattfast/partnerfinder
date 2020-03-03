@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   </head>	
+   <body>
+   	  <center>
+   	  	<h1>Create a Posting:</h1>
+   	  	<form action="{% url 'createposting' assignment.id%}" method="post">
+   	  	  <label for="note">Note:</label><br>
+   	  	  <input type="text" id="note" name="note"><br>
+   	  	  <input type="submit" value="Submit">
+   	  	</form>
+   	  </center>
+   </body>	
+</html>

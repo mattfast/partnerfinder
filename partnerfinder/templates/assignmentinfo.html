@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
-   <head>
-   </head>	
-   <body>
-   	  <center>
-   	  </center>
-   </body>	
+  <head>
+  </head>	
+  <body>
+    <h1>Postings for {{assignment_name}}:</h1>
+
+    {% if posting_list %}
+      {% for posting in posting_list %}
+        <p>{{assignment.name}}: </p>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p> No postings have been created for this assignment. </p>
+      <p> <a href="{% url 'postingform' assignment.id %}"> Create the first one! </a> </p>
+    {% endif %} 
+  </body>	
 </html>
