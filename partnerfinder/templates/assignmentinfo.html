@@ -5,14 +5,11 @@
   <body>
     <h1>Postings for {{assignment_name}}:</h1>
 
-    {% if posting_list %}
-      {% for posting in posting_list %}
-        <p>{{assignment.name}}: </p>
-      {% endfor %}
-      <a href="{% url 'postingform' assignment.id %}"> Create a posting for this assignment. </a>
-    {% else %}
-      <p> No postings have been created for this assignment. </p>
-      <p> <a href="{% url 'postingform' assignment.id %}"> Create the first one! </a> </p>
-    {% endif %} 
+    {% for posting in posting_list %}
+      <p>{{assignment.name}}: </p>
+    {% endfor %}
+    <a href="{% url 'postingform' assignment.id %}"> Create a posting for this assignment. </a>
+    <p> No postings have been created for this assignment. </p>
+    <p> <a href="{% url 'postingform' assignment.id %}"> Create the first one! </a> </p>
   </body>	
 </html>
