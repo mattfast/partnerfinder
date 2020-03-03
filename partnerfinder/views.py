@@ -23,7 +23,7 @@ def courseinfo(request, course_id):
 
 def assignmentinfo(request, assignment_id):
 	assignment = get_object_or_404(Assignment, pk=assignment_id)
-	posting_list = Posting.objects.filter(assignment=assignment).order_by('created')
+	posting_list = get_list_or_404(Posting, assignment=assignment)
 	context = {'posting_list': posting_list, 'assignment_name': assignment.name}
 	return render(request, 'assignmentinfo.html', context)
 
