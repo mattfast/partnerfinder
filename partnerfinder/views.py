@@ -58,7 +58,8 @@ def createcourse(request):
 def createassignment(request, course_id):
 	try:
 		name = request.POST['name']
-		assignment = Assignment.objects.create(name = name, course = course_id)
+		course = get_object_or_404(Assignment, pk=course_id)
+		assignment = Assignment.objects.create(name = name, course = course)
 	except (KeyError):
 		context = {'error_message': "You did not enter an assignment name."}
 		return render(request, 'assignmentform.html', context)
@@ -69,7 +70,8 @@ def createposting(request, assignment_id):
 	try:
 		note = request.POST['note']
 		time = datetime.datetime.now()
-		posting = Assignment.objects.create(note = note, created = time, assignment = assignment_id)
+		assignment = get_object_or_404(Assignment, pk=assignment_id)
+		posting = Assignment.objects.create(note = note, created = time, assignment = assignment)
 	except (KeyError):
 		context = {'error_message': "You did not enter a note."}
 		return render(request, 'postingform.html', context)
