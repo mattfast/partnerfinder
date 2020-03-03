@@ -32,11 +32,18 @@ def postinginfo(request, posting_id):
 	context = {'posting': posting}
 	return render(request, 'postinginfo.html', context)
 
-def courseform(request):
+def courseform(request)
+	return render(request, 'courseform.html')
 
-def assignmentform(request):
+def assignmentform(request, course_id):
+	course = get_object_or_404(Course, pk=course_id)
+	context = {'course': course}
+	return render(request, 'assignmentform.html', context)
 
-def postingform(request):
+def postingform(request, assignment_id):
+	assignment = get_object_or_404(Assignment, pk=assignment_id)
+	context = {'assignment': assignment}
+	return render(request, 'postingform.html', context)
 
 def createcourse(request):
 	try:
@@ -47,7 +54,6 @@ def createcourse(request):
 		return render(request, 'courseform.html', context)
 
 	return HttpResponseRedirect(reverse('courseinfo', args = (course.id,)))
-	
 
 def createassignment(request, course_id):
 	try:
