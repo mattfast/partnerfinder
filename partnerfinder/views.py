@@ -17,13 +17,13 @@ def courses(request):
 
 def courseinfo(request, course_id):
 	course = get_object_or_404(Course, pk=course_id)
-	assignment_list = Assignment.objects.filter(course=course_id).order_by('name')
+	assignment_list = Assignment.objects.filter(course=course).order_by('name')
 	context = {'assignment_list': assignment_list, 'course': course}
 	return render(request, 'courseinfo.html', context)
 
 def assignmentinfo(request, assignment_id):
 	assignment = get_object_or_404(Assignment, pk=assignment_id)
-	posting_list = Posting.objects.filter(assignment=assignment_id).order_by('created')
+	posting_list = Posting.objects.filter(assignment=assignment).order_by('created')
 	context = {'posting_list': posting_list, 'assignment_name': assignment.name}
 	return render(request, 'assignmentinfo.html', context)
 
