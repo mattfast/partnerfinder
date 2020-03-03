@@ -58,7 +58,7 @@ def createcourse(request):
 def createassignment(request, course_id):
 	try:
 		name = request.POST['name']
-		course = get_object_or_404(Assignment, pk=course_id)
+		course = get_object_or_404(Course, pk=course_id)
 		assignment = Assignment.objects.create(name = name, course = course)
 	except (KeyError):
 		context = {'error_message': "You did not enter an assignment name."}
