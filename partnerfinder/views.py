@@ -18,7 +18,7 @@ def courses(request):
 def courseinfo(request, course_id):
 	course = get_object_or_404(Course, pk=course_id)
 	assignment_list = Assignment.objects.filter(course=course_id).order_by('name')
-	context = {'assignment_list': assignment_list, 'course_name': course.name}
+	context = {'assignment_list': assignment_list, 'course': course}
 	return render(request, 'courseinfo.html', context)
 
 def assignmentinfo(request, assignment_id):

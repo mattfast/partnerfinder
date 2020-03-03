@@ -3,7 +3,7 @@
   <head>
   </head>	
   <body>
-    <h1>Assignments for {{course_name}}:</h1>
+    <h1>Assignments for {{course.name}}:</h1>
 
     {% if assignment_list %}
       <ul>
@@ -11,8 +11,10 @@
         <li>{{assignment.name}}: <a href="{% url 'assignmentinfo' assignment.id %}"> View postings </a></li>
       {% endfor %}
       </ul>
+      <a href="{% url 'assignmentform' course.id %}"> Create an assignment for this course. </a>
     {% else %}
-      <p> No assignments have been created for this class. </p>
+      <p> No assignments have been created for this course. </p>
+      <a href="{% url 'assignmentform' course.id %}"> Create the first one! </a>
     {% endif %} 
   </body>	
 </html>

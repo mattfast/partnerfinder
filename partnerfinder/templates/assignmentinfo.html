@@ -9,7 +9,7 @@
       {% for posting in posting_list %}
         <p>{{assignment.name}}: </p>
       {% endfor %}
-      </ul>
+      <a href="{% url 'postingform' assignment.id %}"> Create a posting for this assignment. </a>
     {% else %}
       <p> No postings have been created for this assignment. </p>
       <p> <a href="{% url 'postingform' assignment.id %}"> Create the first one! </a> </p>
