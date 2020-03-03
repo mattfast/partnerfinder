@@ -126,5 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+CSRF_COOKIE_DOMAIN = None
+
 # Configure for heroku environment
 django_heroku.settings(locals())
