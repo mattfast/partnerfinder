@@ -32,7 +32,7 @@ def postinginfo(request, posting_id):
 	context = {'posting': posting}
 	return render(request, 'postinginfo.html', context)
 
-def courseform(request)
+def courseform(request):
 	return render(request, 'courseform.html')
 
 def assignmentform(request, course_id):
